@@ -1,18 +1,10 @@
 // Create a new Vue app
 const app = Vue.createApp({
   // Define the data properties
-  computed: {
-    navbarClasses() {
-      return {
-        'navbar-dark bg-dark': this.useDarkNavbar,
-        'navbar-light bg-light': !this.useDarkNavbar
-      }
-    }
-  },
   data() {
     return {
       activePage: 0,
-      useDarkNavbar: true,
+      them: 'dark',
       // Array of page objects
       pages: [
         {
@@ -38,6 +30,12 @@ const app = Vue.createApp({
         }
       ]
     };
+  },
+  // Methods are here, outside of the data function
+  methods: {
+    toggleTheme() {
+      this.them = (this.them === 'Light') ? 'dark' : 'Light';
+    },
   }
 });
 
