@@ -11,7 +11,7 @@ Vue.createApp({
   data() {
       return {
        links:[
-        {text:'Home',url:'home.html'},
+        {text:'Home',url:'index.html'},
         {text:'About',url:'about.html'},
         {text:'Contact',url:'Contact.html'}
       ]
