@@ -40,4 +40,15 @@ const app = Vue.createApp({
 });
 
 // Mount the Vue app to a DOM element with id 'app'
+app.component('page-viewer', {
+  props: ['page'],
+  template: `
+    <div  class="container">
+        <h1 >{{ page.pageTitle }}</h1>
+        <p >{{ page.content }}</p>
+    </div>
+  `
+});
+
+
 app.mount('#app');
