@@ -10,8 +10,9 @@
 
     <div id="app">
         <!-- Navbar -->
-        <nav :class="[`navbar-${them}`, `bg-${them}`, 'navbar', 'navbar-expand-lg']">
-
+        <nav class="navbar navbar-expand-lg "
+            :class="navbarClasses"
+        >
             <a class="navbar-brand" href="#">My Vue Navbar</a>
             <!-- Added toggle button for smaller screens -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -29,8 +30,8 @@
                     </li>
                 </ul>
                 <!-- Toggle Button for Dark/Light Mode -->
-                <button class="btn btn-primary ms-auto" @click="toggleTheme">
-                  Toggle Mode
+                <button class="btn btn-primary ms-auto" @click="useDarkNavbar = !useDarkNavbar">
+                    Toggle Mode
                 </button>
             </div>
         </nav>
