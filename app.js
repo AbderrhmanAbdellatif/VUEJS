@@ -4,6 +4,7 @@ const app = Vue.createApp({
   data() {
       return {
         activePage:0,
+        useDarkNavbar:true,
           // Array of page objects
           pages: [
               {
