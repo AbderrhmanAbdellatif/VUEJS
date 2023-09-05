@@ -10,32 +10,16 @@
 
     <div id="app">
         <!-- Navbar -->
-        <nav :class="[`navbar-${them}`, `bg-${them}`, 'navbar', 'navbar-expand-lg']">
+        <navbar
+        :pages="pages"
+        :active-page="activePage"
+        :nav-link-click="(index)=>activePage = index"
+>
+        </navbar>
+      
+      
 
-            <a class="navbar-brand" href="#">My Vue Navbar</a>
-            <!-- Added toggle button for smaller screens -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li v-for="(page, index) in pages" class="nav-item" :key="index">
-                        <a 
-                        class="nav-link"
-                        :class="{active: activePage==index}"
-                        :href="page.nav.url" 
-                        @click.prevent="activePage = index">
-                        {{ page.nav.text }}</a>
-                    </li>
-                </ul>
-                <!-- Toggle Button for Dark/Light Mode -->
-                <button class="btn btn-primary ms-auto" @click="toggleTheme">
-                  Toggle Mode
-                </button>
-            </div>
-        </nav>
-
-        <page-viewer 
+    <page-viewer 
         :page="pages[activePage]">
     </page-viewer>
     
