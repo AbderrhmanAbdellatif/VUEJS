@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Navbar -->
-    <navbar :pages="pages" :active-page="activePage" :nav-link-click="(index) => activePage = index">
+    <navbar :pages="pages" :active-page="activePage" :navLinkClick="(index) => activePage = index">
     </navbar>
 
 
