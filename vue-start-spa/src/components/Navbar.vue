@@ -6,10 +6,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li v-for="(page, index) in pages" class="nav-item" :key="index">
-                    <a class="nav-link" :class="{ active: activePage == index }" :href="page.nav.url"
-                        @click="nav - link - click(index)">
-                        {{ page.nav.text }}</a>
+                <li v-for="(page, index) in pages" class=" emphasize nav-item" :key="index">
+                    <navbar-link
+                        :page="page"
+                        :isActive="activePage === index"
+                        @click="navLinkClick(index)"
+                    >
+                    </navbar-link>
+
                 </li>
             </ul>
             <button class="btn btn-primary ms-auto" @click="toggleTheme">
@@ -20,8 +24,12 @@
 </template>
 
 <script>
+import NavbarLink from './NavbarLink'
 export default {
-    props: ['pages', 'activePage', 'nav-link-click'], // Renamed to match
+    components: {
+        NavbarLink,
+    },
+    props: ['pages', 'activePage', 'navLinkClick'], // Renamed to match
     data() {
         return {
             them: 'dark',
